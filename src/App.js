@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./component/Home"
+import Logout from "./component/Logout"
+import Login from "./component/Login"
+import Register from "./component/Register"
+import Crate1 from "./component/Crate1"
+import Editcon from "./component/Editcon"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <Routes>
+        <Route path='/contacts' Component={Home} />
+        <Route path='/login' Component={Login} />
+        <Route path='/register' Component={Register} />
+        <Route path='/logout' Component={Logout} />
+        <Route path='/crate' Component={Crate1} />
+        <Route path='/Edit' Component={Editcon} />
+
+      </Routes>
+    </Router>
   );
 }
 
